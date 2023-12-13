@@ -1,0 +1,77 @@
+﻿{
+  "name": "IISPostamatЯчейка",
+  "modelName": "i-i-s-postamat-ячейка",
+  "className": "Ячейка",
+  "nameSpace": "IIS.Postamat",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "номерЯчейки",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "транзакция",
+      "relatedTo": "i-i-s-postamat-транзакция",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "постамат",
+      "relatedTo": "i-i-s-postamat-постамат",
+      "inverse": "ячейка"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ЯчейкаE",
+      "modelName": "i-i-s-postamat-ячейка",
+      "attrs": [
+        {
+          "name": "номерЯчейки",
+          "caption": "Номер ячейки",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "Время",
+          "lookupValueField": "время",
+          "relationName": "Транзакция",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "время",
+              "caption": "Время",
+              "hidden": true,
+              "index": 2
+            }
+          ],
+          "index": 1,
+          "type": "standard",
+          "caption": "Транзакция",
+          "name": "транзакция",
+          "relatedTo": "i-i-s-postamat-транзакция",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

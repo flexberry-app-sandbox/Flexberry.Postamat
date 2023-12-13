@@ -1,0 +1,31 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "СлужбаДоставки",
+      "projection": "СлужбаДоставкиL",
+      "detailModelName": null
+    },
+    {
+      "master": "транзакция",
+      "displayAttributeName": "время",
+      "required": true,
+      "relationName": "Ячейка.Транзакция",
+      "projection": "ТранзакцияL",
+      "detailModelName": "i-i-s-postamat-ячейка"
+    }
+  ],
+  "external": false,
+  "caption": "Постамат",
+  "name": "IISPostamatПостаматE",
+  "className": "ПостаматE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-postamat-постамат",
+      "modelProjection": "ПостаматE"
+    }
+  ]
+}

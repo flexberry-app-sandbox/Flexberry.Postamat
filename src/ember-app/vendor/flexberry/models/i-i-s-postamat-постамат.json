@@ -1,0 +1,162 @@
+﻿{
+  "name": "IISPostamatПостамат",
+  "modelName": "i-i-s-postamat-постамат",
+  "className": "Постамат",
+  "nameSpace": "IIS.Postamat",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "iD",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "адрес",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "статус",
+      "type": "i-i-s-postamat-статусы",
+      "flexberryType": "Статусы",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "службаДоставки",
+      "relatedTo": "i-i-s-postamat-служба-доставки",
+      "inverse": null
+    }
+  ],
+  "hasMany": [
+    {
+      "name": "ячейка",
+      "relatedTo": "i-i-s-postamat-ячейка",
+      "inverse": "постамат"
+    }
+  ],
+  "projections": [
+    {
+      "name": "ПостаматE",
+      "modelName": "i-i-s-postamat-постамат",
+      "attrs": [
+        {
+          "name": "iD",
+          "caption": "ID",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "адрес",
+          "caption": "Адрес",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "статус",
+          "caption": "Статус",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "Наименование",
+          "lookupValueField": "наименование",
+          "relationName": "СлужбаДоставки",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Наименование",
+              "hidden": true,
+              "index": 4
+            }
+          ],
+          "index": 3,
+          "type": "standard",
+          "caption": "Служба доставки",
+          "name": "службаДоставки",
+          "relatedTo": "i-i-s-postamat-служба-доставки",
+          "inverse": null
+        }
+      ],
+      "hasMany": [
+        {
+          "projectionName": "ЯчейкаE",
+          "caption": "Ячейка",
+          "name": "ячейка",
+          "relatedTo": "i-i-s-postamat-ячейка",
+          "inverse": null
+        }
+      ]
+    },
+    {
+      "name": "ПостаматL",
+      "modelName": "i-i-s-postamat-постамат",
+      "attrs": [
+        {
+          "name": "iD",
+          "caption": "ID",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "адрес",
+          "caption": "Адрес",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "статус",
+          "caption": "Статус",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "СлужбаДоставки",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Наименование",
+              "hidden": false,
+              "index": 3
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Наименование",
+          "name": "службаДоставки",
+          "relatedTo": "i-i-s-postamat-служба-доставки",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

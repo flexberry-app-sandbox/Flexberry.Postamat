@@ -1,0 +1,152 @@
+﻿{
+  "name": "IISPostamatТранзакция",
+  "modelName": "i-i-s-postamat-транзакция",
+  "className": "Транзакция",
+  "nameSpace": "IIS.Postamat",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "iD",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "время",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "дата",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "оплата",
+      "type": "i-i-s-postamat-оплата",
+      "flexberryType": "Оплата",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "сумма",
+      "type": "decimal",
+      "flexberryType": "double",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [
+    {
+      "name": "посылка",
+      "relatedTo": "i-i-s-postamat-посылка",
+      "inverse": "транзакция"
+    }
+  ],
+  "projections": [
+    {
+      "name": "ТранзакцияE",
+      "modelName": "i-i-s-postamat-транзакция",
+      "attrs": [
+        {
+          "name": "iD",
+          "caption": "ID",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "дата",
+          "caption": "Дата",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "время",
+          "caption": "Время",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "оплата",
+          "caption": "Оплата",
+          "hidden": false,
+          "index": 3
+        },
+        {
+          "name": "сумма",
+          "caption": "Сумма",
+          "hidden": false,
+          "index": 4
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": [
+        {
+          "projectionName": "ПосылкаE",
+          "caption": "Посылка",
+          "name": "посылка",
+          "relatedTo": "i-i-s-postamat-посылка",
+          "inverse": null
+        }
+      ]
+    },
+    {
+      "name": "ТранзакцияL",
+      "modelName": "i-i-s-postamat-транзакция",
+      "attrs": [
+        {
+          "name": "iD",
+          "caption": "",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "время",
+          "caption": "",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "дата",
+          "caption": "",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "оплата",
+          "caption": "",
+          "hidden": false,
+          "index": 3
+        },
+        {
+          "name": "сумма",
+          "caption": "",
+          "hidden": false,
+          "index": 4
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

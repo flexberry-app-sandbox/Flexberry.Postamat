@@ -1,0 +1,23 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": "логистика",
+      "displayAttributeName": "информация",
+      "required": true,
+      "relationName": "Посылка.Логистика",
+      "projection": "ЛогистикаL",
+      "detailModelName": "i-i-s-postamat-посылка"
+    }
+  ],
+  "external": false,
+  "caption": "",
+  "name": "IISPostamatТранзакцияE",
+  "className": "ТранзакцияE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-postamat-транзакция",
+      "modelProjection": "ТранзакцияE"
+    }
+  ]
+}

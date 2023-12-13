@@ -1,0 +1,184 @@
+﻿{
+  "name": "IISPostamatПользователь",
+  "modelName": "i-i-s-postamat-пользователь",
+  "className": "Пользователь",
+  "nameSpace": "IIS.Postamat",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "iD",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "номерТелефона",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "фИО",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "транзакция",
+      "relatedTo": "i-i-s-postamat-транзакция",
+      "inverse": null
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ПользовательE",
+      "modelName": "i-i-s-postamat-пользователь",
+      "attrs": [
+        {
+          "name": "iD",
+          "caption": "ID",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "фИО",
+          "caption": "ФИО",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "номерТелефона",
+          "caption": "Номер телефона",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Транзакция",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "дата",
+              "caption": "Дата",
+              "hidden": false,
+              "index": 4
+            },
+            {
+              "name": "время",
+              "caption": "Время",
+              "hidden": false,
+              "index": 5
+            },
+            {
+              "name": "оплата",
+              "caption": "Оплата",
+              "hidden": false,
+              "index": 6
+            },
+            {
+              "name": "сумма",
+              "caption": "Сумма",
+              "hidden": false,
+              "index": 7
+            }
+          ],
+          "index": 3,
+          "type": "default",
+          "caption": "Транзакция",
+          "name": "транзакция",
+          "relatedTo": "i-i-s-postamat-транзакция",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    },
+    {
+      "name": "ПользовательL",
+      "modelName": "i-i-s-postamat-пользователь",
+      "attrs": [
+        {
+          "name": "iD",
+          "caption": "ID",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "фИО",
+          "caption": "ФИО",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "номерТелефона",
+          "caption": "Номер телефона",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Транзакция",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "дата",
+              "caption": "Дата",
+              "hidden": false,
+              "index": 3
+            },
+            {
+              "name": "время",
+              "caption": "Время",
+              "hidden": false,
+              "index": 4
+            },
+            {
+              "name": "оплата",
+              "caption": "Оплата",
+              "hidden": false,
+              "index": 5
+            },
+            {
+              "name": "сумма",
+              "caption": "Сумма",
+              "hidden": false,
+              "index": 6
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Дата",
+          "name": "транзакция",
+          "relatedTo": "i-i-s-postamat-транзакция",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

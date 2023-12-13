@@ -1,0 +1,8 @@
+﻿{
+  "nameSpace": "IIS.Postamat",
+  "className": "Статусы",
+  "enumObjects": {
+    "1": "Исправен",
+    "2": "Неисправен"
+  }
+}

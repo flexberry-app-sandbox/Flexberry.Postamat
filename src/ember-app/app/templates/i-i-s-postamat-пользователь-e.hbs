@@ -1,0 +1,114 @@
+<h3 class="ui header">{{t "forms.i-i-s-postamat-пользователь-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.iD
+      class=(if (v-get validationModel "iD" "isInvalid") "error")
+      label=(t "forms.i-i-s-postamat-пользователь-e.iD-caption")
+      data-test-i-i-s-postamat-пользователь-e-iD=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "iD" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.фИО
+      class=(if (v-get validationModel "фИО" "isInvalid") "error")
+      label=(t "forms.i-i-s-postamat-пользователь-e.фИО-caption")
+      data-test-i-i-s-postamat-пользователь-e-фИО=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "фИО" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.номерТелефона
+      class=(if (v-get validationModel "номерТелефона" "isInvalid") "error")
+      label=(t "forms.i-i-s-postamat-пользователь-e.номерТелефона-caption")
+      data-test-i-i-s-postamat-пользователь-e-номерТелефона=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "номерТелефона" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-postamat-пользователь-e.транзакция-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.транзакция
+      relationName="транзакция"
+      projection="ТранзакцияL"
+      title=(t "forms.i-i-s-postamat-пользователь-e.транзакция-caption")
+      readonly=readonly
+      componentName="транзакцияLookup"
+      class=(if (v-get validationModel "транзакция" "isInvalid") "error")
+      data-test-i-i-s-postamat-пользователь-e-транзакция=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "транзакция" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-postamat-пользователь-e.транзакция.дата-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=true
+      value=model.транзакция.дата
+      class=(if (v-get validationModel.транзакция "дата" "isInvalid") "error")
+      data-test-i-i-s-postamat-пользователь-e-транзакция-дата=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.транзакция "дата" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.транзакция.время
+      class=(if (v-get validationModel.транзакция "время" "isInvalid") "error")
+      label=(t "forms.i-i-s-postamat-пользователь-e.транзакция.время-caption")
+      data-test-i-i-s-postamat-пользователь-e-транзакция-время=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.транзакция "время" "message")}}
+  </div>
+  <div class="field" data-test-i-i-s-postamat-пользователь-e-транзакция-оплата="true">
+    <label>{{t "forms.i-i-s-postamat-пользователь-e.транзакция.оплата-caption"}}</label>
+    {{flexberry-dropdown
+      items=(flexberry-enum "i-i-s-postamat-оплата")
+      value=model.транзакция.оплата
+      class=(if (v-get validationModel.транзакция "оплата" "isInvalid") "error")
+      readonly=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.транзакция "оплата" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.транзакция.сумма
+      class=(if (v-get validationModel.транзакция "сумма" "isInvalid") "error")
+      label=(t "forms.i-i-s-postamat-пользователь-e.транзакция.сумма-caption")
+      data-test-i-i-s-postamat-пользователь-e-транзакция-сумма=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.транзакция "сумма" "message")}}
+  </div>
+</form>

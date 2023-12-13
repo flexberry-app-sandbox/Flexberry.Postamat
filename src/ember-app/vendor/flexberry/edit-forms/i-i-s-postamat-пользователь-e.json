@@ -1,0 +1,23 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Транзакция",
+      "projection": "ТранзакцияL",
+      "detailModelName": null
+    }
+  ],
+  "external": false,
+  "caption": "Пользователь",
+  "name": "IISPostamatПользовательE",
+  "className": "ПользовательE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-postamat-пользователь",
+      "modelProjection": "ПользовательE"
+    }
+  ]
+}

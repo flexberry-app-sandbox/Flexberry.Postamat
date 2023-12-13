@@ -1,0 +1,128 @@
+﻿{
+  "name": "IISPostamatПосылка",
+  "modelName": "i-i-s-postamat-посылка",
+  "className": "Посылка",
+  "nameSpace": "IIS.Postamat",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "iD",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "отправитель",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "получатель",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "статус",
+      "type": "i-i-s-postamat-статус",
+      "flexberryType": "Статус",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "логистика",
+      "relatedTo": "i-i-s-postamat-логистика",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "транзакция",
+      "relatedTo": "i-i-s-postamat-транзакция",
+      "inverse": "посылка"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ПосылкаE",
+      "modelName": "i-i-s-postamat-посылка",
+      "attrs": [
+        {
+          "name": "iD",
+          "caption": "ID",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "статус",
+          "caption": "Статус",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "отправитель",
+          "caption": "Отправитель",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "получатель",
+          "caption": "Получатель",
+          "hidden": false,
+          "index": 3
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "Информация",
+          "lookupValueField": "информация",
+          "relationName": "Логистика",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "состояние",
+              "caption": "Состояние",
+              "hidden": false,
+              "index": 5
+            },
+            {
+              "name": "информация",
+              "caption": "Информация",
+              "hidden": true,
+              "index": 6
+            }
+          ],
+          "index": 4,
+          "type": "standard",
+          "caption": "Логистика",
+          "name": "логистика",
+          "relatedTo": "i-i-s-postamat-логистика",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}
